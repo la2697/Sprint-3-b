@@ -4,6 +4,7 @@ using INFITF;
 using MECMOD;
 using PARTITF;
 using HybridShapeTypeLib;
+using KnowledgewareTypeLib;
 
 
 namespace GUI_Oberfläche_Zahnräder
@@ -223,14 +224,14 @@ namespace GUI_Oberfläche_Zahnräder
             myPart.Update();
         }
 
-        private void Modellerzeugung()
+        public void Modellerzeugung()
         {
             // Hauptkoerper in Bearbeitung definieren
             hsp_catiaPart.Part.InWorkObject = hsp_catiaPart.Part.MainBody;
 
             // Block erzeugen
             ShapeFactory catShapeFactory1 = (ShapeFactory)hsp_catiaPart.Part.ShapeFactory;
-            Pad catPad1 = catShapeFactory1.AddNewPad(hsp_catiaProfil, l);
+            Pad catPad1 = catShapeFactory1.AddNewPad(hsp_catiaProfil, 2);
 
             // Block umbenennen
             catPad1.set_Name("Zahnrad-Modell");
